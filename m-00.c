@@ -9,7 +9,7 @@
 
 #define MAX 500
 
- int main(void) {
+int main(void) {
 
 	char str[MAX] = {0};
 	char *ptr = str;
@@ -17,24 +17,24 @@
 	int number;
 
 	printf("\n Enter the string :\n");
-	 	 
-	fgets(str, MAX, stdin);					/* Read line */
 
-	while (*ptr) { 							/* Until the value is NULL */
-	
-		if (isdigit(*ptr)) {				/* If the character is a number */
-      
-			number = strtol(ptr, &ptr, 10); /* Capturing a number and assigning it to the variable number. */
-	   
-			if (max < number)				/* Compare the number and store the maximum value. */
-		   
-			max = number;
-                       
-		} 
-		else  ptr++;						/* Or go to the next value */
-    
+	fgets(str, MAX, stdin);						/* Read line */
+
+	while (*ptr) { 								/* Until the value is NULL */
+
+		if (isdigit(*ptr)) {					/* If the character is a number */
+
+			number = strtol(ptr, &ptr, 10); 	/* Capturing a number and assigning it to the variable number. */
+
+			if (max < number)					/* Compare the number and store the maximum value. */
+
+				max = number;
+
+		}
+		else  ptr++;							/* Or go to the next value */
+
 	}
-	printf("\n  Maximum value = %d\n", max); 
- 
- return 0;
+	printf("\n  Maximum value = %d\n", max);
+
+	return 0;
 }
