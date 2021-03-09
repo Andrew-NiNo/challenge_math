@@ -1,7 +1,7 @@
-// Задача m - 00
-// Задана строка состоящая из натуральных чисел, разделенных возможными символами: пробел, таб, или запятая
-// вывести Максимальное число
-// Образец:    09 665, 23	,456,0987,12 1567 11
+// The task m - 00
+// It is a string consisting of natural numbers separated by possible characters: space, tab, or comma.
+// You need to print the maximum number.
+// Sample string:    09 665, 23	,456,0987,12 1567 11
 
 #include <stdio.h>
 #include <ctype.h>
@@ -11,30 +11,30 @@
 
  int main(void) {
 
-	char *str[MAX] = {0};
+	char str[MAX] = {0};
 	char *ptr = str;
 	int max = 0;
 	int number;
 
-	printf("\n Vvedite stroku\n");
+	printf("\n Enter the string :\n");
 	 	 
-	fgets(str, MAX, stdin);					/*Считываем строку в массив*/
+	fgets(str, MAX, stdin);					/* Read line */
 
-	while (*ptr) { 							/*Выполняется цикл, пока значение массива не 0*/
+	while (*ptr) { 							/* Until the value is NULL */
 	
-		if (isdigit(*ptr)) {				/*Если символ число - */
+		if (isdigit(*ptr)) {				/* If the character is a number */
       
-			number = strtol(ptr, &ptr, 10); /* - выполняется захват числа и присвоение переменной number*/
+			number = strtol(ptr, &ptr, 10); /* Capturing a number and assigning it to the variable number. */
 	   
-			if (max < number)				/*Происходит сравнение числа и сохранение максимального значения*/
+			if (max < number)				/* Compare the number and store the maximum value. */
 		   
 			max = number;
                        
 		} 
-		else  ptr++;						/*Если символ не число - переход к следующей ячейке массива*/
+		else  ptr++;						/* Or go to the next value */
     
 	}
-	printf("\n  Maksimalnoe chislo - %d\n", max); 
+	printf("\n  Maximum value = %d\n", max); 
  
  return 0;
 }
