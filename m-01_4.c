@@ -36,7 +36,7 @@
 	}
 		
 		for (i = counter - 1; i > 0; i--) {				/* Start sorting the array using the bubble method */
-
+	
 			for (j = 0; j < i; j++) {	printf("  i = %d \n", i);
 				
 				if (array[j] < array[j + 1]){ 
