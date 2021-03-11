@@ -12,7 +12,7 @@
  int main(void) {
 
 	char str[MAX] = {0};
-	long array[MAX] = {0};
+	long numbers[MAX] = {0};
 	char *ptr = str;
 	int counter = 0;
 	int temp = 0;
@@ -27,7 +27,7 @@
 	
 		if (isdigit(*ptr)) {
       
-			array[i] = strtol(ptr, &ptr, 10); 
+			numbers[i] = strtol(ptr, &ptr, 10); 
 		 
 			counter = i++; 								/* Start counter for further sorting */
 		}
@@ -37,13 +37,13 @@
 		
 		for (i = counter - 1; i > 0; i--) {				/* Start sorting the array using the bubble method */
 	
-			for (j = 0; j < i; j++) {	printf("  i = %d \n", i);
+			for (j = 0; j < i; j++) {
 				
-				if (array[j] < array[j + 1]){ 
+				if (numbers[j] < numbers[j + 1]){ 
 				  
-					temp = array[j];
-					array[j] = array[j + 1];
-					array[j + 1] = temp;
+					temp = numbers[j];
+					numbers[j] = numbers[j + 1];
+					numbers[j + 1] = temp;
 				}
 			}
 		}	
@@ -52,7 +52,7 @@
 	 
 		for (i = 0; i < counter; i++) {					/* Send the sorted array to the output stream */
 					  
-			printf(" %ld ", array[i]);
+			printf(" %ld ", numbers[i]);
 	
 		}
 	
