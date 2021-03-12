@@ -53,7 +53,6 @@
 		for (i = 0; i < counter; i++) {					/* Send the sorted array to the output stream */
 					  
 			printf(" %ld ", numbers[i]);
-	
 		}
 	
  return(0); 

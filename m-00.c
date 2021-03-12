@@ -29,7 +29,6 @@ int main(void) {
 			if (max < number)					/* Compare the number and store the maximum value. */
 
 				max = number;
-
 		}
 		else  ptr++;							/* Or go to the next value */
 

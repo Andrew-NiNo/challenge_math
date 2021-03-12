@@ -27,7 +27,6 @@ void my_sorting(long *digits, char flag, int size) {   	// Array sort function
 			}
 		}
 	}
-
 	else if (flag == '>') {								// If flag is '>'
 
 		for (i = size - 1; i > 0; i--) {
