@@ -1,7 +1,6 @@
-// Задача M - 06
-// Найти сумму  между минимальным и максимальным элементами массива
-//Пример: 4,6,84,648,44,68,486,77,87,8,4,049,81,41,8,43,72,811,468,487
-
+// The task M - 06
+// Find the sum between the minimum and maximum elements of an array
+// The sample:   4,6,84,648,44,68,486,77,87,8,4,049,81,41,8,43,72,811,468,487
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,36 +10,33 @@
 
  int main(void) {
 
-	char *str[MAX] = {0};
+	char str[MAX] = {0};
 	char *ptr = str;
 	int max = INT_MIN;
 	int min = INT_MAX;
 
-	printf("\n Vvedite stroku\n");					//Считываем строку в массив
+	printf("\n Enter value : \n");					
 	 	 
 	fgets(str, MAX, stdin);
 
-	while (*ptr) { 									//Пока значение массива не 0, определяем в массиве числа 
+	while (*ptr) { 									
 	
 		if (isdigit(*ptr)) {
       
-		 int numb = strtol(ptr, &ptr, 10); 
+		 int value = strtol(ptr, &ptr, 10); 
 	 
-			if (max < numb) {						//Через сравнение определяем максимальное 
+			if (max < value) {						
 		   
-			   max = numb;
+			   max = value;
 			}
-			
-			else if (min > numb) {					// и минимальное значение 
+			else if (min > value) {					
 		   
-					 min = numb;
+					 min = value;
 				}
 		} 
-		
 		else  ptr++;
 	}
-	
-	printf("\n Summa min i max = %d\n", max + min); //Выводим на экран сумму этих значений
+	printf("\n Summ min & max = %d\n", max + min); 
  
  return 0;
 }
