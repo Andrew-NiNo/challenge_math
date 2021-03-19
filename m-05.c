@@ -8,7 +8,7 @@
 
 #define MAX 500
 
- int main(void) {
+int main(void) {
 
 	char str[MAX] = {0};
 	char *ptr = str;
@@ -17,28 +17,26 @@
 	int j = 0;
 
 	printf("\n Enter string ...\n");
-	 	 
+
 	fgets(str, MAX, stdin);
 
-	while (*ptr) { 
-	
+	while (*ptr) {
+
 		if (isdigit(*ptr)) {
-      
-			array[j++] = strtol(ptr, &ptr, 10); 
-	   
+
+			array[j++] = strtol(ptr, &ptr, 10);
+
 			for (int i = 0; i < j; i++) {
-			
+
 				if (abs(array[i]) < abs(array[num]))
-			
+
 					num = i;
-			}			  
+			}
 		}
-		
 		else  ptr++;
-    
 	}
-	
-	printf("\nThe number of the minimal  element is - %d \n", num + 1); 
- 
- return 0;
+
+	printf("\nThe number of the minimal  element is - %d \n", num + 1);
+
+	return 0;
 }
