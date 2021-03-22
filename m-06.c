@@ -5,38 +5,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <ctype.h>
 
 #define MAX 500
 
- int main(void) {
+int main(void) {
 
 	char str[MAX] = {0};
 	char *ptr = str;
 	int max = INT_MIN;
 	int min = INT_MAX;
 
-	printf("\n Enter value : \n");					
-	 	 
+	printf("\n Enter value : \n");
+
 	fgets(str, MAX, stdin);
 
-	while (*ptr) { 									
-	
+	while (*ptr) {
+
 		if (isdigit(*ptr)) {
-      
-		 int value = strtol(ptr, &ptr, 10); 
-	 
-			if (max < value) {						
-		   
-			   max = value;
-			}
-			else if (min > value) {					
-		   
-					 min = value;
-				}
-		} 
+
+			int value = strtol(ptr, &ptr, 10);
+
+			max < value ? max = value : min > value ? min = value : 0;
+		}
 		else  ptr++;
 	}
-	printf("\n Summ min & max = %d\n", max + min); 
- 
- return 0;
+	printf("\n Sum min & max = %d\n", max + min);
+
+	return 0;
 }
