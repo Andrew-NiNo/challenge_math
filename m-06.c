@@ -5,17 +5,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <ctype.h>
 
 #define MAX 500
 
+<<<<<<< HEAD
 int main(void)
 {
 	char *ptr = malloc(255);
+=======
+int main(void) {
+
+	char str[MAX] = {0};
+	char *ptr = str;
+>>>>>>> eb62d0d13cd5882183cd87776cdf148bf6de6553
 	int max = INT_MIN;
 	int min = INT_MAX;
 
 	printf("\n Enter value : \n");
 
+<<<<<<< HEAD
 	fgets(ptr, MAX, stdin);
 
 	while (*ptr)
@@ -31,6 +40,21 @@ int main(void)
 			ptr++;
 	}
 	printf("\n Summ min & max = %d\n", max + min);
+=======
+	fgets(str, MAX, stdin);
+
+	while (*ptr) {
+
+		if (isdigit(*ptr)) {
+
+			int value = strtol(ptr, &ptr, 10);
+
+			max < value ? max = value : min > value ? min = value : 0;
+		}
+		else  ptr++;
+	}
+	printf("\n Sum min & max = %d\n", max + min);
+>>>>>>> eb62d0d13cd5882183cd87776cdf148bf6de6553
 
 	return 0;
 }
