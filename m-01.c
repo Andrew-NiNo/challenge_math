@@ -1,6 +1,6 @@
 // The task m - 00
 // There is a string consisting of natural numbers separated by possible characters: space, tab, or comma
-// Order numbers in descending order
+// Return values in descending order
 // Sample string:    09 665, 23	,456,0987,12 1567 11
 
 #include <stdio.h>
@@ -9,53 +9,37 @@
 
 #define MAX 500
 
- int main(void) {
+int comp(const void *i, const void *j)
+{
+	return (*(int *)i - *(int *)j);
+}
 
+int main(void)
+{
 	char str[MAX] = {0};
-	long numbers[MAX] = {0};
 	char *ptr = str;
-	int counter = 0;
-	int temp = 0;
-	int i = 0;
-	int j = 0;
+	long numbers[MAX] = {0};
+	int sizeNumbers = 0;
 
 	printf("\n Enter the string :\n");
-	 	 
-	fgets(str, MAX, stdin);								/* Read line */
 
-	while (*ptr) { 										/* Until the value is NULL */
-	
+	fgets(str, MAX, stdin);
+
+	while (*ptr)
+	{
 		if (isdigit(*ptr)) {
-      
-			numbers[i] = strtol(ptr, &ptr, 10); 
-		 
-			counter = i++; 								/* Start counter for further sorting */
+
+			numbers[sizeNumbers++] = strtol(ptr, &ptr, 10);
 		}
-		
-		else  ptr++;
+		else
+			ptr++;
 	}
-		
-		for (i = counter - 1; i > 0; i--) {				/* Start sorting the array using the bubble method */
-	
-			for (j = 0; j < i; j++) {
-				
-				if (numbers[j] < numbers[j + 1]){ 
-				  
-					temp = numbers[j];
-					numbers[j] = numbers[j + 1];
-					numbers[j + 1] = temp;
-				}
-			}
-		}	
-		
-		putchar('\n');
-	 
-		for (i = 0; i < counter; i++) {					/* Send the sorted array to the output stream */
-					  
-			printf(" %ld ", numbers[i]);
-		}
-	
- return(0); 
+
+	qsort(numbers, sizeNumbers, sizeof(long), comp);
+
+	for (int j = 0; j < sizeNumbers; j++)
+
+		printf("  %ld ", numbers[j]);
+
+	return (0);
 }
-                        	 
- 
